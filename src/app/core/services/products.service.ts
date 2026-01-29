@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, computed, signal } from '@angular/core';
+import { catchError, of } from 'rxjs';
 
 export type Product = { id: number; title: string; price: number; image: string };
 
@@ -9,9 +10,13 @@ export class ProductsService {
   items = computed(() => this._items());
 
   constructor(private http: HttpClient) {
-    this.http.get<Product[]>('assets/products.json').subscribe({
-      next: (data) => this._items.set(data || []),
-      error: () => this._items.set([])
-    });
+    this.http.get<Product[]>('assets/products.json')
+      .pipe(
+        catchError((err) => {
+          console.error('Failed to load products.json', err);
+          return of([]);
+        })
+      )
+      .subscribe((data) => this._items.set(data || []));
   }
 }

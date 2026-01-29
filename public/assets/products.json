@@ -1,0 +1,14 @@
+[
+  { "id": 1, "title": "ვარდების თაიგული", "price": 150, "image": "assets/p1.jpg" },
+  { "id": 2, "title": "გაზაფხულის კომპოზიცია", "price": 220, "image": "assets/p2.jpg" },
+  { "id": 3, "title": "ლილიების თაიგული", "price": 180, "image": "assets/p3.jpg" },
+
+  { "id": 4, "title": "პეონების თაიგული", "price": 260, "image": "assets/p4.jpg" },
+  { "id": 5, "title": "საჩუქარი ბოქსი", "price": 320, "image": "assets/p5.jpg" },
+  { "id": 6, "title": "თეთრი ვარდები", "price": 190, "image": "assets/p6.jpg" },
+
+  { "id": 7, "title": "ვარდების თაიგული", "price": 150, "image": "assets/p7.jpg" },
+  { "id": 8, "title": "გაზაფხულის კომპოზიცია", "price": 220, "image": "assets/p8.jpg" },
+  { "id": 9, "title": "ლილიების თაიგული", "price": 180, "image": "assets/p9.jpg" }
+
+]

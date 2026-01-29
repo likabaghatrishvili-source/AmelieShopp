@@ -1,4 +1,5 @@
 <div class="container">
+
   <div class="crumbs muted">
     <span>All</span> <span class="sep">/</span> <span>საჩუქრები</span>
     <span class="sep">/</span> <span>ყვავილები</span>
@@ -25,7 +26,11 @@
       <div class="products">
         <article class="card pcard" *ngFor="let p of items()">
           <a [routerLink]="['/product', p.id]">
-            <img class="pimg" [src]="p.image" [alt]="p.title" />
+           <img class="pimg"
+     [src]="p.image"
+     [alt]="p.title"
+     (error)="$any($event.target).src='assets/placeholder.jpg'" />
+
           </a>
 
           <div class="pbody">
