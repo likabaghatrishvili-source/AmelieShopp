@@ -1,1 +1,44 @@
-<p>cart works!</p>
+<div class="container">
+  <div class="head">
+    <h2>კალათა</h2>
+    <button class="btn btn-ghost" (click)="clear()" *ngIf="items().length">Clear</button>
+  </div>
+
+  <div class="empty card" *ngIf="!items().length">
+    <p class="muted">კალათა ცარიელია</p>
+    <a class="btn btn-primary" routerLink="/shop">გადასვლა მაღაზიაში</a>
+  </div>
+
+  <div class="layout" *ngIf="items().length">
+    <section class="card list">
+      <article class="row" *ngFor="let it of items()">
+        <img class="img" [src]="it.image" [alt]="it.title" />
+        <div class="info">
+          <div class="title">{{ it.title }}</div>
+          <div class="muted">{{ it.price | gelPrice }}</div>
+
+          <div class="qty">
+            <button class="qbtn" (click)="dec(it.id)">-</button>
+            <div class="qnum">{{ it.qty }}</div>
+            <button class="qbtn" (click)="inc(it.id)">+</button>
+          </div>
+        </div>
+
+        <div class="right">
+          <div class="sum">{{ (it.price * it.qty) | gelPrice }}</div>
+          <button class="x" (click)="remove(it.id)">Remove</button>
+        </div>
+      </article>
+    </section>
+
+    <aside class="card total">
+      <h3>ჯამი</h3>
+      <div class="line"></div>
+      <div class="trow">
+        <span class="muted">Total</span>
+        <b>{{ total() | gelPrice }}</b>
+      </div>
+      <button class="btn btn-primary">Checkout</button>
+    </aside>
+  </div>
+</div>
