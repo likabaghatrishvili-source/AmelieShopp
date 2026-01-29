@@ -1,1 +1,39 @@
-<p>admin works!</p>
+<div class="container">
+  <div class="head">
+    <h2>Admin</h2>
+    <p class="muted">მხოლოდ Admin როლს აქვს წვდომა</p>
+  </div>
+
+  <div class="layout">
+    <section class="card form">
+      <h3>Add Product (UI Demo)</h3>
+
+      <label>Title
+        <input [value]="title()" (input)="title.set($any($event.target).value)" />
+      </label>
+
+      <label>Price
+        <input type="number" [value]="price()" (input)="price.set(Number($any($event.target).value))" />
+      </label>
+
+      <label>Image path
+        <input [value]="image()" (input)="image.set($any($event.target).value)" />
+      </label>
+
+      <button class="btn btn-primary" (click)="addLocal()">Add</button>
+    </section>
+
+    <section class="card list">
+      <h3>Products</h3>
+      <div class="line"></div>
+
+      <div class="row" *ngFor="let p of items()">
+        <img [src]="p.image" [alt]="p.title" />
+        <div>
+          <b>{{ p.title }}</b>
+          <div class="muted">{{ p.price | gelPrice }}</div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
