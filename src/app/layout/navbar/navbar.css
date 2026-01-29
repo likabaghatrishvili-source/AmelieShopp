@@ -1,0 +1,22 @@
+.top { position: sticky; top: 0; z-index: 10; }
+.mini { background: #1f1f1f; color: #fff; font-size: 12px; }
+.mini-inner { display: flex; justify-content: space-between; padding: 8px 16px; }
+
+.bar { background: #fff; border-bottom: 1px solid #eceef5; }
+.bar-inner { display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; gap: 18px; }
+
+.logo { font-weight: 900; letter-spacing: 1px; font-size: 22px; }
+
+.nav { display: flex; gap: 18px; font-size: 14px; color: #374151; }
+.nav a:hover { text-decoration: underline; }
+
+.right { display: flex; align-items: center; gap: 12px; }
+.cart { font-weight: 800; }
+.badge {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 20px; height: 20px; padding: 0 6px;
+  border-radius: 999px; background: #111; color: #fff; font-size: 12px;
+}
+
+.link { font-weight: 700; color: #111; }
+.linkBtn { background: transparent; border: 0; cursor: pointer; font-weight: 800; }

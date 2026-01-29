@@ -1,1 +1,37 @@
-<p>navbar works!</p>
+<header class="top">
+  <div class="mini">
+    <div class="container mini-inner">
+      <div class="muted">+995 592 064 064</div>
+      <div class="muted">Amelie Inspired</div>
+    </div>
+  </div>
+
+  <div class="bar">
+    <div class="container bar-inner">
+      <a class="logo" routerLink="/">ამელიე</a>
+
+      <nav class="nav">
+        <a routerLink="/">ყვავილების კატალოგი</a>
+        <a routerLink="/shop">შეკვეთის პირობები</a>
+        <a routerLink="/shop">კონტაქტი</a>
+        <a routerLink="/">Amelie Home</a>
+      </nav>
+
+      <div class="right">
+        <a class="cart" routerLink="/cart">
+          კალათა <span class="badge">{{ cartCount() }}</span>
+        </a>
+
+        <ng-container *ngIf="!isLoggedIn(); else logged">
+          <a class="link" routerLink="/login">Login</a>
+          <a class="link" routerLink="/signup">Signup</a>
+        </ng-container>
+
+        <ng-template #logged>
+          <a *ngIf="isAdmin()" class="link" routerLink="/admin">Admin</a>
+          <button class="linkBtn" (click)="logout()">Logout</button>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</header>
