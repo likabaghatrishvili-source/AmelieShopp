@@ -1,1 +1,23 @@
-<p>home works!</p>
+<div class="container">
+  <section class="hero card">
+    <div>
+      <h1>Amelie Inspired</h1>
+      <p class="muted">ყვავილები და კომპოზიციები — სწრაფი არჩევანი და მარტივი შეკვეთა.</p>
+      <div class="actions">
+        <a class="btn btn-primary" routerLink="/shop">ნახე კატალოგი</a>
+        <a class="btn btn-ghost" routerLink="/cart">კალათა</a>
+      </div>
+    </div>
+  </section>
+
+  <h3 class="title">Top Products</h3>
+  <div class="cards">
+    <a class="card p" *ngFor="let x of products.items().slice(0,3)" [routerLink]="['/product', x.id]">
+      <img [src]="x.image" [alt]="x.title" />
+      <div class="pb">
+        <b>{{ x.title }}</b>
+        <span class="muted">{{ x.price | gelPrice }}</span>
+      </div>
+    </a>
+  </div>
+</div>
