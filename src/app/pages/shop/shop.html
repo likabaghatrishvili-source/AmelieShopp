@@ -1,1 +1,44 @@
-<p>shop works!</p>
+<div class="container">
+  <div class="crumbs muted">
+    <span>All</span> <span class="sep">/</span> <span>საჩუქრები</span>
+    <span class="sep">/</span> <span>ყვავილები</span>
+  </div>
+
+  <div class="grid">
+    <aside class="card filters">
+      <h3>ფასი.</h3>
+      <div class="radios">
+        <label><input type="radio" name="p" checked (change)="price.set('all')" /> All</label>
+        <label><input type="radio" name="p" (change)="price.set('0-100')" /> ₾0 - ₾100</label>
+        <label><input type="radio" name="p" (change)="price.set('100-200')" /> ₾100 - ₾200</label>
+        <label><input type="radio" name="p" (change)="price.set('200-300')" /> ₾200 - ₾300</label>
+        <label><input type="radio" name="p" (change)="price.set('300-400')" /> ₾300 - ₾400</label>
+        <label><input type="radio" name="p" (change)="price.set('400+')" /> ₾400+</label>
+      </div>
+    </aside>
+
+    <section>
+      <div class="topRow">
+        <input class="search" placeholder="ძებნა" [value]="q()" (input)="q.set(($any($event.target).value))" />
+      </div>
+
+      <div class="products">
+        <article class="card pcard" *ngFor="let p of items()">
+          <a [routerLink]="['/product', p.id]">
+            <img class="pimg" [src]="p.image" [alt]="p.title" />
+          </a>
+
+          <div class="pbody">
+            <div class="ptitle">{{ p.title | truncate: 40 }}</div>
+            <div class="muted">{{ p.price | gelPrice }}</div>
+
+            <div class="actions">
+              <a class="btn btn-ghost" [routerLink]="['/product', p.id]">View</a>
+              <button class="btn btn-primary" (click)="add(p.id)">Add</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </div>
+</div>
