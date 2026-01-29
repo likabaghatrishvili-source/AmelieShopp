@@ -1,7 +1,8 @@
 import { Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductsService, Product } from '../../core/services/products.service';
-import { GelPricePipe } from '../../shared/pipes/gel-price.pipe';
+import { GelPricePipe } from '../../shared/pipes/gel-price-pipe';
+
 
 @Component({
   standalone: true,

@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ProductsService } from '../../core/services/products.service';
 import { CartService } from '../../core/services/cart.service';
-import { GelPricePipe } from '../../shared/pipes/gel-price.pipe';
+import { GelPricePipe } from '../../shared/pipes/gel-price-pipe';
+
 
 @Component({
   standalone: true,

@@ -8,8 +8,9 @@ import { LoginComponent } from './pages/login/login';
 import { SignupComponent } from './pages/signup/signup';
 import { AdminComponent } from './pages/admin/admin';
 
-import { authGuard } from './core/guards/auth.guard';
-import { adminGuard } from './core/guards/admin.guard';
+import { authGuard } from './core/guards/auth-guard';
+import { adminGuard } from './core/guards/admin-guard';
+
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },

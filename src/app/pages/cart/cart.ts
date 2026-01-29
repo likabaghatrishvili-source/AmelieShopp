@@ -1,7 +1,7 @@
 import { Component, computed, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CartService } from '../../core/services/cart.service';
-import { GelPricePipe } from '../../shared/pipes/gel-price.pipe';
+import { GelPricePipe } from '../../shared/pipes/gel-price-pipe';
 import { RouterLink } from '@angular/router';
 
 @Component({
