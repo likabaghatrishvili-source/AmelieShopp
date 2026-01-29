@@ -1,1 +1,23 @@
-<p>login works!</p>
+<div class="container">
+  <div class="auth card">
+    <h2>Login</h2>
+    <p class="muted">შედი ანგარიშში</p>
+
+    <form (ngSubmit)="submit()" [formGroup]="form" class="form">
+      <label>
+        Email
+        <input type="email" formControlName="email" placeholder="example@mail.com" />
+      </label>
+
+      <label>
+        Password
+        <input type="password" formControlName="password" placeholder="****" />
+      </label>
+
+      <div class="err" *ngIf="error">{{ error }}</div>
+
+      <button class="btn btn-primary" type="submit">Login</button>
+      <a class="muted link" routerLink="/signup">არ გაქვს ანგარიში? Signup</a>
+    </form>
+  </div>
+</div>
