@@ -1,0 +1,6 @@
+.wrap { padding: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.img { width: 100%; height: 420px; object-fit: cover; border-radius: 14px; }
+.info { display: grid; gap: 12px; align-content: start; }
+.price { font-weight: 900; font-size: 22px; }
+.actions { display: flex; gap: 10px; }
+.box { margin-top: 18px; padding: 18px; display: grid; gap: 10px; }
